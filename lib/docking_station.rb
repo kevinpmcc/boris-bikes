@@ -5,14 +5,15 @@ class DockingStation
 
   def initialize
     @bike = Bike.new
-    @station = []
+   # @station = []
   end
 
   def release_bike
     Bike.new
   end
 
-  def dock_bike
-    @station << bike
+  def dock_bike(bike)
+    bike
+   # @station << bike
   end
 end
