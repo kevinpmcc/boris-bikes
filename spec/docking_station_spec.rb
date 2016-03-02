@@ -8,4 +8,9 @@ describe DockingStation do
     it  {is_expected.to be_a Bike}
     it {is_expected.to be_working}
   end
+  describe '#dock_bike' do
+    it "responds to method call of dock_bike" do
+      expect(subject).to respond_to(:dock_bike)
+    end 
+  end
 end
