@@ -6,13 +6,23 @@ describe DockingStation do
   describe '#release_bike' do
     subject {DockingStation.new.release_bike}
 
-  #  it "raises error when there are no bikes at the station" do
-  #    DockingStation.new.is_empty? = true
-  #    expect(subject).to raise_error("There are no bikes available")
-  #  end
-
-      it  {is_expected.to be_a Bike}
-    it {is_expected.to be_working}
+    it "raises error when there are no bikes at the station" do
+      expect{subject}.to raise_error("There are no bikes available")
+    end
+    
+    it "releases a bike after a bike has been docked" do
+        bad_name =  DockingStation.new
+        bad_name.dock_bike(Bike.new)
+       expect(bad_name.release_bike).to be_a Bike
+        
+    end
+     # it  {is_expected.to be_a Bike}
+    it  "releases a bike that is working" do
+        bad_name =  DockingStation.new
+        bad_name.dock_bike(Bike.new)
+        expect(bad_name.release_bike).to be_working
+    end
+   # it {is_expected.to be_working}
 
   end
   describe '#dock_bike' do
