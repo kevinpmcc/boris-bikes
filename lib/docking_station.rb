@@ -1,19 +1,19 @@
 require './lib/bike.rb'
 
 class DockingStation
-  attr_accessor :bike
+  attr_reader :bike
 
-  def initialize
-    @bike = Bike.new
-   # @station = []
-  end
+  #def initialize
+  #  @bike = Bike.new
+  #  #@station = []
+  #end
 
   def release_bike
     Bike.new
   end
 
   def dock_bike(bike)
-    bike
-   # @station << bike
+    #@station << bike
+    @bike = bike
   end
 end
