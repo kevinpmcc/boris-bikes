@@ -13,7 +13,7 @@ describe DockingStation do
       expect(subject).to respond_to(:dock_bike)
     end
     it "changes bike_docked to true" do
-      #subject.dock_bike
+      subject.dock_bike
       expect(subject.bike_docked).to be true
     end
   end
