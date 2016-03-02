@@ -4,7 +4,7 @@ class DockingStation
   attr_reader :bikes
 
   def initialize
-  #  @bike = Bike.new
+
     @bikes = []
   end
 
@@ -20,7 +20,13 @@ class DockingStation
   end
 
   def dock_bike(bike)
-    raise "There are no spaces available" if @bikes.size > 19
+    raise "There are no spaces available" if full?
     @bikes <<  bike
+  end
+
+  private
+
+  def full?
+    @bikes.size > 19
   end
 end
