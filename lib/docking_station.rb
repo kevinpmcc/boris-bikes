@@ -7,19 +7,20 @@ class DockingStation
   #  @bike = Bike.new
     @station = []
   end
-  
+
   def is_empty?
     @station.empty?
   end
-  
+
   def release_bike
     if is_empty?
       raise "There are no bikes available"
     end
-    Bike.new 
+    Bike.new
   end
 
   def dock_bike(bike)
+    raise "There are no spaces available" if @station.size == 1
     @station << bike
     @bike = bike
   end
