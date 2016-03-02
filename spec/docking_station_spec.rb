@@ -24,7 +24,7 @@ describe DockingStation do
   end
   describe '#dock_bike' do
     it "raises error when station is full (capacity:20)" do
-      20.times { subject.dock_bike(Bike.new) }
+      DockingStation::DEFAULT_CAPACITY.times { subject.dock_bike(Bike.new) }
       expect{subject.dock_bike(Bike.new)}.to raise_error("There are no spaces available")
     end
     it "responds to method call of dock_bike" do
