@@ -11,6 +11,11 @@ describe DockingStation do
   describe '#dock_bike' do
     it "responds to method call of dock_bike" do
       expect(subject).to respond_to(:dock_bike)
-    end 
+    end
+    it "changes bike_docked to true" do
+      #subject.dock_bike
+      expect(subject.bike_docked).to be true
+    end
   end
+
 end
