@@ -7,7 +7,9 @@ class DockingStation
   #  @bike = Bike.new
   #  #@station = []
   #end
-
+  def is_empty?
+    true
+  end
   def release_bike
     Bike.new
   end
