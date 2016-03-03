@@ -4,10 +4,11 @@ describe DockingStation do
    let(:bike_instance) { Bike.new }
    let(:parked_bike) { subject.park_bike(bike_instance) }
 
-  
+
   describe "#bike" do
     it "can view a bike that has been parked in a docking station" do
-        expect(subject.bike).to eq parked_bike
+      parked_bike
+      expect(subject.bike).to eq parked_bike
     end
   end
 
@@ -21,11 +22,12 @@ describe DockingStation do
     end
 
     it "releases a bike that is an instance of bike class" do
-      
+      parked_bike
       expect(subject.release_bike.class).to eq Bike
     end
 
     it 'expects released bike to be working' do
+      parked_bike
       expect(subject.release_bike.working?).to eq true
     end
 
@@ -40,5 +42,4 @@ describe DockingStation do
 
   end
 
-  
 end
