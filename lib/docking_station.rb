@@ -8,6 +8,7 @@ class DockingStation
   end
 
   def park_bike(bike)
+    raise "NO MORE BIKES PLEASE" if @bike
     @bike = bike
   end
 

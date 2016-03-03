@@ -39,7 +39,12 @@ describe DockingStation do
     it 'returns bike that it has received' do
       expect(subject.park_bike(bike_instance)).to eq bike_instance
     end
-
+    
+    it 'raises an error "NO MORE BIKES PLEASE" when there is a bike parked' do 
+      subject.park_bike(Bike.new)
+      expect { parked_bike }.to raise_error "NO MORE BIKES PLEASE"
+    end
+  
   end
 
 end
