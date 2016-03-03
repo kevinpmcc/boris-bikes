@@ -4,8 +4,7 @@ class DockingStation
 
   def release_bike
     raise "NO BIKES" unless @bike
-    Bike.new
-
+    @bike
   end
 
   def park_bike(bike)
