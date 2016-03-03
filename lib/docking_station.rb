@@ -7,7 +7,7 @@ class DockingStation
   end
 
   def park_bike(bike)
-    #@bike = bike
+    @bike = bike
   end
 
 end

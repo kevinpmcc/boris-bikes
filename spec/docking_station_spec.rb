@@ -1,6 +1,17 @@
 require 'docking_station'
 
 describe DockingStation do
+  
+  
+  describe "#bike" do
+    it "can view a bike that has been parked in a docking station" do
+      bike_instance = Bike.new
+      parked_bike = subject.park_bike(bike_instance)
+      expect(subject.bike).to eq parked_bike
+    end
+  end
+
+
   describe '#release_bike' do
 
     it { is_expected.to respond_to(:release_bike)  }
@@ -23,4 +34,6 @@ describe DockingStation do
     end
 
   end
+
+  
 end
