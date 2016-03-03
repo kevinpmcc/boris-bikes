@@ -1,13 +1,13 @@
 require 'docking_station'
 
 describe DockingStation do
-  
+   let(:bike_instance) { Bike.new }
+   let(:parked_bike) { subject.park_bike(bike_instance) }
+
   
   describe "#bike" do
     it "can view a bike that has been parked in a docking station" do
-      bike_instance = Bike.new
-      parked_bike = subject.park_bike(bike_instance)
-      expect(subject.bike).to eq parked_bike
+        expect(subject.bike).to eq parked_bike
     end
   end
 
@@ -15,7 +15,13 @@ describe DockingStation do
   describe '#release_bike' do
 
     it { is_expected.to respond_to(:release_bike)  }
+
+    it "raises an error when there are no bikes in the docking station" do
+       expect { subject.release_bike.class }.to raise_error "NO BIKES"
+    end
+
     it "releases a bike that is an instance of bike class" do
+      
       expect(subject.release_bike.class).to eq Bike
     end
 
@@ -29,8 +35,7 @@ describe DockingStation do
 
     it { is_expected.to respond_to(:park_bike).with(1).argument }
     it 'returns bike that it has received' do
-      bike = Bike.new
-      expect(subject.park_bike(bike)).to eq bike
+      expect(subject.park_bike(bike_instance)).to eq bike_instance
     end
 
   end
