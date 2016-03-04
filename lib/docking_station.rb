@@ -20,7 +20,7 @@ class DockingStation
 
   def park_bike(bike, functioning=true)
     raise "NO MORE BIKES PLEASE" if full?
-    bike.working?(functioning)
+    bike.working=functioning
     @bikes << bike
     @bikes.last
   end

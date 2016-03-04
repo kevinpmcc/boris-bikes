@@ -29,7 +29,7 @@ describe DockingStation do
 
     it 'expects released bike to be working' do
      # parked_bike
-      expect(subject.release_bike.working?).to eq true
+      expect(subject.release_bike.working).to eq true
     end
     end
   end
@@ -63,13 +63,13 @@ describe DockingStation do
      station = subject
      broken_bike = Bike.new
      station.park_bike(broken_bike, false)
-     expect(broken_bike.working?).to eq false
+     expect(broken_bike.working).to eq false
     end
   end
     it 'will return true for working if bike is returned and not declared broken' do
       station = subject
       broken_bike = Bike.new
       station.park_bike(broken_bike)
-      expect(broken_bike.working?).to eq true
+      expect(broken_bike.working).to eq true
   end
 end
