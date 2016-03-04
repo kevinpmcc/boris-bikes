@@ -1,9 +1,12 @@
 class Bike
-attr_accessor :working
+attr_reader :working
   def initialize
     @working = true
   end
 
+  def broken
+    @working = false
+  end
 
 
 
